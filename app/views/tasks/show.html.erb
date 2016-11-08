@@ -1,5 +1,19 @@
 <h1>Tasks#show</h1>
-<p>Find me in app/views/tasks/show.html.erb</p>
+
+<% if @task.completed %>
+  Done: <%= @task.name %> as of <%= @task.updated_at %>
+  <br>
+
+<% else %>
+  To-do: <%= @task.name %>
+  <br>
+
+<% end %>
+Created at: <%= @task.created_at %>
+
+<br>
+
+<%= link_to 'view all tasks', tasks_path %>
 
 
 <!-- Should display the task's details (content, date of creation, etc.) and a back-link to the index page. -->
